@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: form-genie
+    env: static
+    buildCommand: yarn install && yarn build
+    staticPublishPath: ./build
+    envVars:
+      - key: NODE_ENV
+        value: production 
