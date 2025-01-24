@@ -4,7 +4,8 @@ const config = {
     apiUrl: 'http://localhost:3000'
   },
   production: {
-    apiUrl: '/api' // This will be relative to wherever the frontend is deployed
+    // Use environment variable or fallback to a default URL
+    apiUrl: process.env.REACT_APP_API_URL || 'https://formbuilder-backend.onrender.com'
   }
 };
 
