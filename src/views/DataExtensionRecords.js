@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ClientId, ClientSecret, onlySubdomain } from "../functions/Sfmc";
 import { Box, Heading, Select, Button } from "@chakra-ui/react";
 import "../App.css";
 import axios from "axios";
 import DataExtensionRecordList from "../components/template-components/DataExtensionRecordList";
+import { API_URL } from '../config';
+
 function DataExtensionRecords() {
-  // const baseUrl = `https://rhgwebform.herokuapp.com`;
-  const baseUrl = `http://localhost:3000`;
+  const baseUrl = API_URL;
   const [items, setItems] = useState([]);
   const [pageSize, setPageSize] = useState(5);
   const [pageNumber, setPageNumber] = useState(1);

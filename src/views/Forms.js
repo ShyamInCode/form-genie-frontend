@@ -3,6 +3,8 @@ import axios from "axios";
 import FormsList from "../components/template-components/FormLIst";
 import { Box, Select, Button, Heading } from "@chakra-ui/react";
 import jwtDecode from "jwt-decode";
+import { API_URL } from '../config';
+
 function Forms() {
   const [formsList, setFormsList] = useState([]);
   const [pageSize, setPageSize] = useState(5);
@@ -20,7 +22,7 @@ function Forms() {
         pageNumber,
       };
       const response = await axios.post(
-        "http://localhost:3000/v1/form/get-all",
+        `${API_URL}/v1/form/get-all`,
         requestBody
       );
       const data = response.data.formsList;

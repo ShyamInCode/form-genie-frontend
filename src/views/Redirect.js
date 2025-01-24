@@ -5,8 +5,10 @@ import { ClientId, ClientSecret, onlySubdomain } from "../functions/Sfmc";
 import "../App.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// const baseUrl = `https://rhgwebform.herokuapp.com`;
-const baseUrl = `http://localhost:3000`;
+import { API_URL } from '../config';
+
+// Replace hardcoded URL with config
+const baseUrl = API_URL;
 
 function Redirect({ setFormName, update }) {
   let apiEndoint, redirect;
